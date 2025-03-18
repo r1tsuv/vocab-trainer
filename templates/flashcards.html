@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiszki</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='Background_32px.png') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Fiszki</h1>
+        <p class="word"><strong>Po Polsku:</strong> {{ polish }}</p>
+
+        {% if show_answer %}
+            <p class="word"><strong>Po Angielsku:</strong> {{ english }}</p>
+            <form method="POST">
+                <input type="hidden" name="polish" value="{{ polish }}">
+                <button type="submit" name="known" value="yes" class="btn green">Wiedziałem</button>
+                <button type="submit" name="known" value="no" class="btn red">Nie wiedziałem</button>
+            </form>
+        {% else %}
+            <form method="POST">
+                <input type="hidden" name="polish" value="{{ polish }}">
+                <button type="submit" name="show_answer" value="true" class="btn">Pokaż tłumaczenie</button>
+            </form>
+        {% endif %}
+
+        <br>
+        <a href="/" class="btn back">Powrót do menu</a>
+    </div>
+
+<footer style="background-color: #333; color: white; text-align: center; padding: 10px; position: fixed; bottom: 0; width: 100%;">
+    © 2025 wuztur &#x1FAE1;
+</footer>
+
+</body>
+</html>
