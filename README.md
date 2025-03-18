@@ -1,6 +1,9 @@
+Vocab-trainer
+=========
 Simple vocabulary translation training web app written in python using flask library.
 
->Requirements:<br>
+><b>Requirements</b>:<br>
 >Python3,
->flask,
->Nginx/Apache (Optional)
+>Flask,
+>Nginx/Apache (<i>Optional</i>)
+>Gunicorn (<i>Optional</i>)
